@@ -204,8 +204,8 @@
       left:11%; 
       right:11%; 
       bottom:10%; 
-      height:75%; 
-      padding:25px 20px; 
+      height:78%; 
+      padding:24px 18px 18px; 
       background:var(--paper); 
       border-radius:6px; 
       text-align:center; 
@@ -216,8 +216,23 @@
       box-shadow:0 0 0 1px #f1dfd1, 0 4px 10px rgba(112,50,62,0.06); 
       pointer-events:none; 
       will-change: transform;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      box-sizing: border-box;
     }
-    .letter-peek h1 { margin:9px 0 2px; font-family:Itim,cursive; color:var(--deep); font-size:clamp(29px,5vw,47px); font-weight:400; } .letter-peek p { margin:0; font-size:15px; }
+    .letter-peek h1 { margin:6px 0 2px; font-family:Itim,cursive; color:var(--deep); font-size:clamp(28px,5vw,44px); font-weight:400; line-height: 1.15; }
+    .letter-peek p { margin:0; font-size:15px; }
+    .letter-peek .peek-hint { 
+      margin-top: auto; 
+      font-size: 13.5px; 
+      color: #a84f62; 
+      font-weight: 500; 
+      letter-spacing: 0.2px; 
+      padding-top: 6px;
+    }
 
     /* เมื่อเปิดฝาซอง พร้อมเส้นขอบฟอยล์ทอง */
     .envelope-wrap.open .flap { 
@@ -682,23 +697,32 @@
         padding: 16px 14px 40px;
       }
       
-      /* ปรับขนาดซองจดหมายบนมือถือให้กะทัดรัด สบายตา ไม่ล้นจอ */
+      /* ปรับขนาดซองจดหมายบนมือถือให้กะทัดรัด สบายตา ไม่ล้นจอ และข้อความไม่ล้นกระดาษขาว */
       .envelope-wrap {
-        width: min(320px, 84vw);
+        width: min(330px, 86vw);
       }
       .envelope {
-        height: min(205px, 52vw);
-        min-height: 170px;
+        height: min(220px, 55vw);
+        min-height: 195px;
       }
       .letter-peek {
-        padding: 16px 12px;
+        height: 82%;
+        bottom: 8%;
+        padding: 14px 12px 12px;
       }
       .letter-peek h1 {
         font-size: 24px;
-        margin: 4px 0 2px;
+        margin: 3px 0 2px;
+        line-height: 1.2;
       }
       .letter-peek p {
         font-size: 13px;
+        line-height: 1.35;
+      }
+      .letter-peek .peek-hint {
+        font-size: 12px;
+        margin-top: auto;
+        padding-top: 4px;
       }
       .intro {
         font-size: 20px;
@@ -1823,6 +1847,10 @@
     }
     body.night-mode .letter-peek p {
       color: var(--ink) !important;
+      text-shadow: none !important;
+    }
+    body.night-mode .letter-peek .peek-hint {
+      color: #a84f62 !important;
       text-shadow: none !important;
     }
 

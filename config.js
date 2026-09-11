@@ -151,7 +151,7 @@ function applyConfigToDOM(config) {
   // 6. Envelope Peek
   const letterPeek = document.querySelector('.letter-peek');
   if (letterPeek) {
-    letterPeek.innerHTML = `<p>${config.letterPeekTop || 'ถึง'}</p><h1>${name}</h1><p>${config.letterPeekSub || 'มีเรื่องที่เค้าอยากบอกเธอ'}</p><br><br><br><p>${config.letterPeekHint || 'ถ้าอยากรู้ก็กดต่อได้เลยยย'}</p>`;
+    letterPeek.innerHTML = `<p>${config.letterPeekTop || 'ถึง'}</p><h1>${name}</h1><p>${config.letterPeekSub || 'มีเรื่องที่เค้าอยากบอกเธอ'}</p><p class="peek-hint">${config.letterPeekHint || 'ถ้าอยากรู้ก็กดต่อได้เลยยย'}</p>`;
   }
 
   // 7. Intro
